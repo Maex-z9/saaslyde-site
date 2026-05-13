@@ -3,7 +3,8 @@
     "features": "Features",
     "pricing": "Pricing",
     "faq": "FAQ",
-    "demo": "Live Demo"
+    "demo": "Live Demo",
+    "skipToContent": "Skip to main content"
   },
   "Hero": {
     "headline": "Ship your SaaS GDPR-compliant — in days, not weekends.",
@@ -65,7 +66,8 @@
     "proCta": "Buy Pro",
     "comingSoon": "Lemon Squeezy listing coming — sign up for the launch email:",
     "waitlistPlaceholder": "your@email.com",
-    "waitlistSubmit": "Notify me"
+    "waitlistSubmit": "Notify me",
+    "waitlistFallback": "Email signup is being configured. In the meantime, write to us directly: support@saaslyde.com"
   },
   "Faq": {
     "title": "Frequently asked questions",

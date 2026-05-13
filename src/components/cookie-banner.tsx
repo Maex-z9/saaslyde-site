@@ -25,15 +25,23 @@ export function CookieBanner() {
     if (existing === null) setShow(true);
     else { setAnalytics(existing.analytics); setMarketing(existing.marketing); }
 
-    const handler = () => {
+    const openHandler = () => {
       const current = getClientConsent();
       if (current) { setAnalytics(current.analytics); setMarketing(current.marketing); }
       setCustomizing(true);
       setShow(true);
     };
-    window.addEventListener(COOKIE_PREFERENCES_EVENT, handler);
-    return () => window.removeEventListener(COOKIE_PREFERENCES_EVENT, handler);
+    window.addEventListener(COOKIE_PREFERENCES_EVENT, openHandler);
+    return () => window.removeEventListener(COOKIE_PREFERENCES_EVENT, openHandler);
   }, []);
+
+  // Escape-to-dismiss (WCAG 2.1.1).
+  useEffect(() => {
+    if (!show) return;
+    const onKey = (e: KeyboardEvent) => { if (e.key === "Escape") setShow(false); };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [show]);
 
   if (!show) return null;
 
@@ -45,7 +53,7 @@ export function CookieBanner() {
   }
 
   return (
-    <div role="dialog" aria-modal="false" aria-label={t("title")} className="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6">
+    <div role="dialog" aria-modal="true" aria-label={t("title")} className="fixed inset-x-0 bottom-0 z-50 p-4 sm:p-6">
       <Card className="mx-auto max-w-3xl shadow-lg">
         <CardContent className="flex flex-col gap-4 p-6">
           {!customizing ? (
@@ -58,11 +66,10 @@ export function CookieBanner() {
                   })}
                 </p>
               </div>
+              {/* TDDDG § 25(4): "Reject all" must have equal visual prominence to "Accept all". */}
               <div className="flex flex-wrap gap-2 sm:justify-end">
-                <Button variant="outline" onClick={() => setCustomizing(true)}>{t("customize")}</Button>
-                <Button variant="outline" onClick={() => persist({ analytics: false, marketing: false })}>
-                  {t("rejectAll")}
-                </Button>
+                <Button variant="ghost" onClick={() => setCustomizing(true)}>{t("customize")}</Button>
+                <Button onClick={() => persist({ analytics: false, marketing: false })}>{t("rejectAll")}</Button>
                 <Button onClick={() => persist({ analytics: true, marketing: true })}>{t("acceptAll")}</Button>
               </div>
             </>

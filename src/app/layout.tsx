@@ -24,6 +24,17 @@ export const metadata: Metadata = {
   icons: { icon: "/favicon.svg" },
 };
 
+// schema.org Organization — surfaces brand info in Google's Knowledge Panel + AI search.
+const orgSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Saaslyde",
+  url: SITE,
+  logo: `${SITE}/favicon.svg`,
+  description: DESC,
+  sameAs: ["https://github.com/Maex-z9/saaslyde-site"],
+};
+
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const locale = await getLocale();
   return (
@@ -33,6 +44,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           {children}
         </ThemeProvider>
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgSchema) }} />
       </body>
     </html>
   );

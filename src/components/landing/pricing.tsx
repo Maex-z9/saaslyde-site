@@ -32,7 +32,7 @@ export async function Pricing() {
 
       <div className="mx-auto mt-10 max-w-md text-center">
         <p className="text-sm text-muted-foreground">{t("comingSoon")}</p>
-        <Waitlist placeholder={t("waitlistPlaceholder")} submit={t("waitlistSubmit")} />
+        <Waitlist placeholder={t("waitlistPlaceholder")} submit={t("waitlistSubmit")} fallback={t("waitlistFallback")} />
       </div>
     </section>
   );
@@ -40,14 +40,10 @@ export async function Pricing() {
 
 // Renders the form only when NEXT_PUBLIC_FORMSPREE_ID is set in the deployment env.
 // Stops the placeholder action from silently swallowing submits in preview deploys.
-function Waitlist({ placeholder, submit }: { placeholder: string; submit: string }) {
+function Waitlist({ placeholder, submit, fallback }: { placeholder: string; submit: string; fallback: string }) {
   const id = process.env.NEXT_PUBLIC_FORMSPREE_ID;
   if (!id) {
-    return (
-      <p className="mt-3 text-xs italic text-muted-foreground">
-        E-Mail-Anmeldung wird konfiguriert. Schreib uns einstweilen direkt: support@saaslyde.com
-      </p>
-    );
+    return <p className="mt-3 text-xs italic text-muted-foreground">{fallback}</p>;
   }
   return (
     <form action={`https://formspree.io/f/${id}`} method="POST" className="mt-3 flex gap-2">

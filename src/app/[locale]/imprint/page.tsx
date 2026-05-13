@@ -1,6 +1,14 @@
+import type { Metadata } from "next";
 import { setRequestLocale } from "next-intl/server";
 
 import { siteLegal } from "@/lib/legal/config";
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
+  const { locale } = await params;
+  return locale === "de"
+    ? { title: "Impressum", description: "Anbieterkennzeichnung gemäß § 5 DDG für Saaslyde." }
+    : { title: "Imprint", description: "Operator information per § 5 DDG (German Digital Services Act)." };
+}
 
 export default async function ImprintPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

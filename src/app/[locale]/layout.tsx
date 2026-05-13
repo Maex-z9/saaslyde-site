@@ -1,5 +1,5 @@
 import { NextIntlClientProvider, hasLocale } from "next-intl";
-import { setRequestLocale } from "next-intl/server";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 
 import { CookieBanner } from "@/components/cookie-banner";
@@ -20,11 +20,16 @@ export default async function LocaleLayout({
   const { locale } = await params;
   if (!hasLocale(routing.locales, locale)) notFound();
   setRequestLocale(locale);
+  const t = await getTranslations("Nav");
 
   return (
     <NextIntlClientProvider locale={locale}>
+      <a href="#main"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-md focus:bg-primary focus:px-4 focus:py-2 focus:text-primary-foreground">
+        {t("skipToContent")}
+      </a>
       <SiteHeader />
-      {children}
+      <div id="main">{children}</div>
       <SiteFooter />
       <CookieBanner />
     </NextIntlClientProvider>
