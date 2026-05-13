@@ -1,0 +1,136 @@
+{
+  "Nav": {
+    "features": "Features",
+    "pricing": "Preise",
+    "faq": "FAQ",
+    "demo": "Live-Demo"
+  },
+  "Hero": {
+    "headline": "Ship dein SaaS DSGVO-konform — in Tagen, nicht Wochenenden.",
+    "subhead": "Next.js 16 + Supabase + Stripe Boilerplate. Cookie Consent, Datenschutzerklärung-Generator, Impressum, AVV-PDFs — production-ready, nicht Placeholder.",
+    "ctaPrimary": "Jetzt für €149 starten",
+    "ctaSecondary": "Live-Demo ansehen",
+    "trust": "Einmalzahlung · Lemon Squeezy MoR (handhabt MwSt) · 30 Tage Geld-zurück"
+  },
+  "Why": {
+    "title": "Drei Wochenenden, die du dir sparst.",
+    "subtitle": "Compliance-Plumbing, das jeder DACH-Indie-Hacker beim ersten Launch falsch baut — bei Saaslyde von Tag 1 production-grade.",
+    "card1Title": "DSGVO ohne Anwalt",
+    "card1Items": [
+      "Cookie-Banner (TDDDG-konform, granulare Kategorien)",
+      "Consent-Audit-Log mit IP & User-Agent",
+      "Datenschutzerklärung als Single Source of Truth",
+      "Impressum-Generator (§ 5 DDG)",
+      "AVV-PDF-Generator (Art. 28 DSGVO, §1-7)"
+    ],
+    "card2Title": "Stripe + SEPA für EU-Markt",
+    "card2Items": [
+      "Subscription Checkout fertig verdrahtet",
+      "SEPA Direct Debit per Env-Toggle",
+      "Customer Portal Self-Service",
+      "Webhook-Handler mit Idempotenz",
+      "Resend-Integration für Welcome/Invoice/Receipt"
+    ],
+    "card3Title": "Auth + DB mit Row-Level Security",
+    "card3Items": [
+      "Supabase Email + Magic Link + Google OAuth",
+      "profiles + consent_log Migrations mit RLS",
+      "Admin-Dashboard mit MRR + User-Liste",
+      "DE/EN i18n via next-intl",
+      "Light/Dark Theme + Mobile-responsive"
+    ]
+  },
+  "Pricing": {
+    "title": "Eine Zahlung. Kein Abo.",
+    "subtitle": "Lemon Squeezy als Merchant of Record — MwSt für DE/EU/UK/USA automatisch korrekt.",
+    "starterName": "Starter",
+    "starterPrice": "€149",
+    "starterFeatures": [
+      "1 kommerzielles Projekt",
+      "1 Jahr Updates",
+      "Privates GitHub-Repo (Invite nach Zahlung)",
+      "Discord Community"
+    ],
+    "starterCta": "Starter kaufen",
+    "proName": "Pro",
+    "proBadge": "Empfohlen",
+    "proPrice": "€249",
+    "proFeatures": [
+      "Unlimited kommerzielle Projekte",
+      "Lifetime Updates",
+      "Privates GitHub-Repo (Invite nach Zahlung)",
+      "Discord Community + Priority Support",
+      "Künftige Variants (AI-App, Marketplace)"
+    ],
+    "proCta": "Pro kaufen",
+    "comingSoon": "Lemon Squeezy Listing kommt — trag dich für Launch-E-Mail ein:",
+    "waitlistPlaceholder": "deine@email.de",
+    "waitlistSubmit": "Benachrichtigen"
+  },
+  "Faq": {
+    "title": "Häufige Fragen",
+    "items": [
+      {
+        "q": "Was bekomme ich genau?",
+        "a": "Zugang zum privaten GitHub-Repo. Du clonest, lieferst .env-Werte (Supabase, Stripe, Resend), deployst auf Vercel. Setup-Zeit für eine erste Live-Version: ca. 2 Stunden."
+      },
+      {
+        "q": "Brauche ich einen Anwalt für die Compliance-Komponenten?",
+        "a": "Saaslyde liefert die Templates, die ein Anwalt sonst manuell aufsetzt. Für Standard-Use-Cases (B2C-SaaS, B2B-Tools, Newsletter) brauchst du keinen Anwalt. Bei besonderen Konstellationen (eigene Subprocessor außerhalb EU, Health-Daten, Kinder-Apps) lass den Vertrag prüfen — das kostet einmalig 100-300€."
+      },
+      {
+        "q": "Funktioniert das nur in Deutschland?",
+        "a": "Nein. DSGVO gilt EU-weit, TDDDG (Cookie-Recht) ist die deutsche Umsetzung der EU-ePrivacy-Richtlinie und nahezu deckungsgleich mit Frankreichs LCEN, Österreichs DSG, etc. Saaslyde ist DE/EN bilingual."
+      },
+      {
+        "q": "Was wenn der Code in 6 Monaten veraltet ist?",
+        "a": "Starter = 1 Jahr Updates inklusive. Pro = lifetime. Verwendete Stacks (Next.js, Supabase, Stripe, Tailwind) sind LTS-relevant — der Boilerplate bleibt typischerweise 12-24 Monate ohne Major-Refactor stabil."
+      },
+      {
+        "q": "Kann ich das Saaslyde-Boilerplate selbst weiterverkaufen?",
+        "a": "Nein. Du bekommst eine Lizenz, mit der du UNLIMITIERT eigene SaaS-Produkte darauf bauen darfst (Pro) bzw. EIN Produkt (Starter). Den Boilerplate-Code selbst weiterverkaufen / re-distribuieren ist nicht erlaubt."
+      },
+      {
+        "q": "Refund?",
+        "a": "30 Tage Geld-zurück, no questions asked. Über Lemon Squeezy."
+      }
+    ]
+  },
+  "Footer": {
+    "tagline": "DSGVO-konformes SaaS-Boilerplate für indie hackers in der EU.",
+    "product": "Produkt",
+    "legal": "Rechtliches",
+    "privacy": "Datenschutz",
+    "imprint": "Impressum",
+    "cookieSettings": "Cookie-Einstellungen",
+    "contact": "Kontakt",
+    "rights": "Alle Rechte vorbehalten."
+  },
+  "Consent": {
+    "title": "Wir nutzen Cookies",
+    "description": "Notwendige Cookies sind immer aktiv. Mit deiner Zustimmung verwenden wir zusätzlich Cookies für Analyse und Marketing. Details in unserer <privacy>Datenschutzerklärung</privacy>.",
+    "customize": "Anpassen",
+    "rejectAll": "Nur notwendige",
+    "acceptAll": "Alle akzeptieren",
+    "customizeTitle": "Cookie-Einstellungen",
+    "customizeSubtitle": "Wähle, welche Kategorien wir setzen dürfen.",
+    "back": "Zurück",
+    "saveSelection": "Auswahl speichern",
+    "necessary": "Notwendig",
+    "necessaryDesc": "Erforderlich für Grundfunktionen. Können nicht deaktiviert werden.",
+    "analytics": "Analyse",
+    "analyticsDesc": "Hilft uns, die Nutzung der Seite zu verstehen und zu verbessern.",
+    "marketing": "Marketing",
+    "marketingDesc": "Erfolgsmessung von Werbeanzeigen und personalisierte Inhalte."
+  },
+  "NotFound": {
+    "title": "Seite nicht gefunden",
+    "subtitle": "Diese Seite existiert nicht oder wurde verschoben.",
+    "home": "Zur Startseite"
+  },
+  "Error": {
+    "title": "Etwas ist schiefgelaufen",
+    "subtitle": "Versuche es erneut oder lade die Seite neu.",
+    "retry": "Erneut versuchen"
+  }
+}
