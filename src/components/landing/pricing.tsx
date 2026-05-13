@@ -5,8 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 
+type Plan = {
+  name: string; price: string; features: string[]; cta: string;
+  badge?: string; highlight?: boolean;
+};
+
 export async function Pricing() {
   const t = await getTranslations("Pricing");
+
+  const plans: Plan[] = [
+    { name: t("starterName"), price: t("starterPrice"), features: t.raw("starterFeatures"), cta: t("starterCta") },
+    { name: t("proName"), price: t("proPrice"), features: t.raw("proFeatures"), cta: t("proCta"),
+      badge: t("proBadge"), highlight: true },
+  ];
 
   return (
     <section id="pricing" className="mx-auto max-w-5xl px-6 py-20">
@@ -16,20 +27,7 @@ export async function Pricing() {
       </div>
 
       <div className="mx-auto mt-12 grid max-w-3xl gap-6 md:grid-cols-2">
-        <Plan
-          name={t("starterName")}
-          price={t("starterPrice")}
-          features={t.raw("starterFeatures") as string[]}
-          cta={t("starterCta")}
-        />
-        <Plan
-          name={t("proName")}
-          badge={t("proBadge")}
-          price={t("proPrice")}
-          features={t.raw("proFeatures") as string[]}
-          cta={t("proCta")}
-          highlight
-        />
+        {plans.map((p) => <PlanCard key={p.name} {...p} />)}
       </div>
 
       <div className="mx-auto mt-10 max-w-md text-center">
@@ -43,10 +41,7 @@ export async function Pricing() {
   );
 }
 
-function Plan({ name, price, features, cta, badge, highlight }: {
-  name: string; price: string; features: string[]; cta: string;
-  badge?: string; highlight?: boolean;
-}) {
+function PlanCard({ name, price, features, cta, badge, highlight }: Plan) {
   return (
     <Card className={highlight ? "border-primary shadow-md" : undefined}>
       <CardHeader>
@@ -73,14 +68,8 @@ function Plan({ name, price, features, cta, badge, highlight }: {
         </ul>
       </CardContent>
       <CardFooter>
-        <Button
-          className="w-full"
-          variant={highlight ? "default" : "outline"}
-          disabled
-          aria-label="Coming soon"
-        >
-          {cta}
-        </Button>
+        {/* Disabled until Lemon Squeezy listing is live; replace with checkout URL then. */}
+        <Button className="w-full" variant={highlight ? "default" : "outline"} disabled>{cta}</Button>
       </CardFooter>
     </Card>
   );

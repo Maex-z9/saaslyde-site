@@ -5,11 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
 export async function Why() {
   const t = await getTranslations("Why");
-  const cards = [
-    { title: t("card1Title"), items: t.raw("card1Items") as string[] },
-    { title: t("card2Title"), items: t.raw("card2Items") as string[] },
-    { title: t("card3Title"), items: t.raw("card3Items") as string[] },
-  ];
+  const cards = [1, 2, 3].map((i) => ({
+    title: t(`card${i}Title`),
+    items: t.raw(`card${i}Items`) as string[],
+  }));
 
   return (
     <section id="features" className="mx-auto max-w-5xl px-6 py-20">
@@ -21,9 +20,7 @@ export async function Why() {
       <div className="mt-12 grid gap-6 md:grid-cols-3">
         {cards.map((c) => (
           <Card key={c.title}>
-            <CardHeader>
-              <CardTitle className="text-xl">{c.title}</CardTitle>
-            </CardHeader>
+            <CardHeader><CardTitle className="text-xl">{c.title}</CardTitle></CardHeader>
             <CardContent>
               <ul className="flex flex-col gap-2 text-sm">
                 {c.items.map((item) => (
