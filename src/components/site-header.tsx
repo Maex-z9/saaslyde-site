@@ -7,6 +7,7 @@ import { Link } from "@/i18n/navigation";
 
 export async function SiteHeader() {
   const t = await getTranslations("Nav");
+  const demoUrl = process.env.NEXT_PUBLIC_DEMO_URL;
 
   return (
     <header className="sticky top-0 z-40 border-b bg-background/80 backdrop-blur">
@@ -16,9 +17,12 @@ export async function SiteHeader() {
           <Button variant="ghost" size="sm" render={<a href="#features" />}>{t("features")}</Button>
           <Button variant="ghost" size="sm" render={<a href="#pricing" />}>{t("pricing")}</Button>
           <Button variant="ghost" size="sm" render={<a href="#faq" />}>{t("faq")}</Button>
-          <Button variant="ghost" size="sm" render={<a href="https://demo.saaslyde.com" target="_blank" rel="noopener noreferrer" />}>
-            {t("demo")}
-          </Button>
+          {demoUrl && (
+            <Button variant="ghost" size="sm" render={<a href={demoUrl} target="_blank" rel="noopener noreferrer" />}>
+              {t("demo")}
+            </Button>
+          )}
+          <Button variant="ghost" size="sm" render={<Link href="/customers" />}>{t("customers")}</Button>
           <LocaleSwitcher />
           <ThemeToggle />
         </nav>

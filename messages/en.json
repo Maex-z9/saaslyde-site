@@ -4,7 +4,26 @@
     "pricing": "Pricing",
     "faq": "FAQ",
     "demo": "Live Demo",
+    "customers": "Customers",
     "skipToContent": "Skip to main content"
+  },
+  "Customers": {
+    "title": "Already bought Saaslyde?",
+    "subtitle": "Everything that happens after purchase — no customer portal, no login. Lean by design.",
+    "step1Title": "1. GitHub repo invite",
+    "step1Body": "After purchase, reply to our welcome email with your GitHub username. We invite you to the private Saaslyde repo within 24 h. The GitHub invitation arrives directly from github.com — accept, clone, you're in.",
+    "step2Title": "2. Setup in ~2 hours",
+    "step2Body": "Read the README in the repo. You'll need accounts at Supabase (free), Stripe (free), Resend (free), Vercel (free) — then fill in .env.local, apply migrations, deploy.",
+    "step3Title": "3. Updates",
+    "step3Body": "Starter: 1 year. Pro: lifetime. You just run git pull origin main in your cloned repo whenever you want updates. We announce releases in the Pro Discord + by email.",
+    "step4Title": "4. Help",
+    "step4Body": "Replies on business days within 24 h (Pro = priority). Bug reports as GitHub Issues in the Saaslyde repo, general questions by email.",
+    "ctaSupport": "Contact support",
+    "ctaPricing": "Not bought yet? View pricing",
+    "discordTitle": "Pro Discord",
+    "discordBody": "Pro buyers get a Discord invite link in the welcome email. Channels: Announcements, Help, Feature Requests, Showcase. Direct line to us + the Saaslyde community.",
+    "noLoginTitle": "Why is there no login?",
+    "noLoginBody": "Saaslyde is code-only. You get source code to clone — not a hosted tool. So there's nothing to log into on saaslyde.com itself. Your repo access IS your license."
   },
   "Hero": {
     "headline": "Ship your SaaS GDPR-compliant — in days, not weekends.",

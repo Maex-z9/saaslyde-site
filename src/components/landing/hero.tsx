@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 
 export async function Hero() {
   const t = await getTranslations("Hero");
+  const demoUrl = process.env.NEXT_PUBLIC_DEMO_URL;
 
   return (
     <section className="mx-auto max-w-4xl px-6 pt-24 pb-16 text-center">
@@ -15,9 +16,11 @@ export async function Hero() {
       </p>
       <div className="mt-10 flex flex-wrap justify-center gap-3">
         <Button size="lg" render={<a href="#pricing" />}>{t("ctaPrimary")}</Button>
-        <Button size="lg" variant="outline" render={<a href="https://demo.saaslyde.com" target="_blank" rel="noopener noreferrer" />}>
-          {t("ctaSecondary")}
-        </Button>
+        {demoUrl && (
+          <Button size="lg" variant="outline" render={<a href={demoUrl} target="_blank" rel="noopener noreferrer" />}>
+            {t("ctaSecondary")}
+          </Button>
+        )}
       </div>
       <p className="mt-6 text-xs text-muted-foreground">{t("trust")}</p>
     </section>
