@@ -10,6 +10,7 @@ export default function Error({ error, reset }: {
   reset: () => void;
 }) {
   const t = useTranslations("Error");
+  // Hook a real error reporter here (Sentry, Rollbar, etc.).
   useEffect(() => { console.error(error); }, [error]);
 
   return (
