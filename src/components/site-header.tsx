@@ -16,7 +16,7 @@ export async function SiteHeader() {
           <Button variant="ghost" size="sm" render={<a href="#features" />}>{t("features")}</Button>
           <Button variant="ghost" size="sm" render={<a href="#pricing" />}>{t("pricing")}</Button>
           <Button variant="ghost" size="sm" render={<a href="#faq" />}>{t("faq")}</Button>
-          <Button variant="ghost" size="sm" render={<a href="https://demo.saaslyde.com" target="_blank" rel="noopener" />}>
+          <Button variant="ghost" size="sm" render={<a href="https://demo.saaslyde.com" target="_blank" rel="noopener noreferrer" />}>
             {t("demo")}
           </Button>
           <LocaleSwitcher />

@@ -15,7 +15,7 @@ export async function Hero() {
       </p>
       <div className="mt-10 flex flex-wrap justify-center gap-3">
         <Button size="lg" render={<a href="#pricing" />}>{t("ctaPrimary")}</Button>
-        <Button size="lg" variant="outline" render={<a href="https://demo.saaslyde.com" target="_blank" rel="noopener" />}>
+        <Button size="lg" variant="outline" render={<a href="https://demo.saaslyde.com" target="_blank" rel="noopener noreferrer" />}>
           {t("ctaSecondary")}
         </Button>
       </div>

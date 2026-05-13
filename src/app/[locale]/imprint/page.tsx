@@ -50,7 +50,7 @@ export default async function ImprintPage({ params }: { params: Promise<{ locale
               "Streitschlichtung: Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:",
               "Dispute resolution: The European Commission provides an online dispute resolution platform:",
             )}{" "}
-            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener" className="underline hover:no-underline">
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" className="underline hover:no-underline">
               ec.europa.eu/consumers/odr
             </a>
           </p>
